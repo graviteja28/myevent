@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Events</title>
+    <title>Event</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h2>🎥 Live Events</h2>
-        <ul id="eventList">
-            <li><a href="event.html?id=A">Event A</a></li>
-            <li><a href="event.html?id=B">Event B</a></li>
-        </ul>
-        <button onclick="logout()" class="logout-btn">Logout</button>
+        <h2 id="eventTitle">Loading...</h2>
+        <div id="eventContent" class="hidden">
+            <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
     </div>
 
     <script src="script.js"></script>

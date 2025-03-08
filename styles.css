@@ -1,48 +1,82 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     text-align: center;
-    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
 }
 
-header {
-    background-color: #ff66b2;
-    color: white;
-    padding: 20px;
-}
-
-h1, h2 {
-    color: #ff4081;
-}
-
-#livestream, #details, #rsvp {
-    margin: 20px auto;
+.container {
+    max-width: 600px;
+    margin: 50px auto;
     padding: 20px;
     background: white;
-    border-radius: 10px;
-    width: 80%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li a {
+    text-decoration: none;
+    background: #007BFF;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+ul li a:hover {
+    background: #0056b3;
 }
 
 button {
-    background-color: #ff4081;
-    color: white;
-    padding: 10px;
+    margin-top: 20px;
+    padding: 10px 20px;
     border: none;
+    background: #28a745;
+    color: white;
+    font-size: 16px;
     cursor: pointer;
-    margin-top: 10px;
-}
-
-#rsvp-form input {
-    width: 80%;
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-footer {
-    background-color: #ff66b2;
-    color: white;
+button:hover {
+    background: #218838;
+}
+
+.logout-btn {
+    background: red;
+}
+
+.hidden {
+    display: none;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+input {
+    width: 80%;
     padding: 10px;
-    margin-top: 20px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }

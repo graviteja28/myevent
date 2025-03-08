@@ -1,52 +1,45 @@
-// COUNTDOWN TIMER
-function startCountdown() {
-    let weddingDate = new Date("2025-06-15T10:00:00").getTime(); // Set your wedding date here
-    let countdownElement = document.getElementById("countdown");
+// Dummy user authentication (Replace with a real database in the future)
+const users = {
+    "userA": { password: "1234", access: ["A"] },
+    "userB": { password: "5678", access: ["B"] }
+};
 
-    setInterval(() => {
-        let now = new Date().getTime();
-        let timeLeft = weddingDate - now;
+// Login Function
+function login() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-        let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-        let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-        countdownElement.innerHTML = `${days} Days ${hours}h ${minutes}m ${seconds}s`;
-
-        if (timeLeft < 0) {
-            countdownElement.innerHTML = "The wedding has started!";
-        }
-    }, 1000);
+    if (users[username] && users[username].password === password) {
+        sessionStorage.setItem("loggedInUser", username);
+        window.location.href = "index.html"; // Redirect to events list
+    } else {
+        alert("Invalid username or password!");
+    }
 }
 
-// RSVP FORM SUBMISSION
-document.getElementById("rsvp-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+// Logout Function
+function logout() {
+    sessionStorage.removeItem("loggedInUser");
+    window.location.href = "login.html";
+}
 
-    let name = document.getElementById("name").value;
-    let guests = document.getElementById("guests").value;
-    let email = document.getElementById("email").value;
+// Event Page Access Control
+document.addEventListener("DOMContentLoaded", function() {
+    const params = new URLSearchParams(window.location.search);
+    const eventId = params.get('id');
 
-    if (name.trim() !== "" && guests.trim() !== "") {
-        document.getElementById("rsvp-message").innerHTML = `Thank you, ${name}! Your RSVP has been recorded for ${guests} guest(s).`;
-        document.getElementById("rsvp-form").reset();
+    const user = sessionStorage.getItem("loggedInUser");
+
+    if (!user) {
+        window.location.href = "login.html"; // Redirect if not logged in
     } else {
-        document.getElementById("rsvp-message").innerHTML = "Please fill in all required fields.";
+        if (users[user].access.includes(eventId)) {
+            document.getElementById("eventTitle").innerText = `Welcome to Event ${eventId}`;
+            document.getElementById("eventContent").classList.remove("hidden");
+            document.querySelector("iframe").src = `https://www.youtube.com/embed/YOUR_LIVE_STREAM_ID`; // Replace with real ID
+        } else {
+            alert("Access denied!");
+            window.location.href = "index.html"; // Redirect to home
+        }
     }
 });
-
-// WHATSAPP SHARE BUTTON
-document.getElementById("whatsapp-share").addEventListener("click", function() {
-    let message = `You're invited to our wedding! 🎉
-Date: [Your Wedding Date]
-Venue: [Location Name]
-Join the Live Stream: [Your Website Link]
-See you there! 💖`;
-    
-    let whatsappURL = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
-    window.open(whatsappURL, "_blank");
-});
-
-// Start Countdown Timer
-startCountdown();
