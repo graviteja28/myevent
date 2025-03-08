@@ -1,4 +1,3 @@
-// Dummy user authentication (Replace with a real database in the future)
 const users = {
     "userA": { password: "1234", access: ["A"] },
     "userB": { password: "5678", access: ["B"] }
