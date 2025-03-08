@@ -5,15 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="container">
         <h2 id="eventTitle">Loading...</h2>
+
+        <div id="eventDetails">
+            <p><strong>Date:</strong> <span id="eventDate"></span></p>
+            <p><strong>Location:</strong> <span id="eventLocation"></span></p>
+            <p><strong>Description:</strong> <span id="eventDescription"></span></p>
+        </div>
+
         <div id="eventContent" class="hidden">
-            <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+            <h3>📡 Live Streaming</h3>
+            <iframe id="youtubeEmbed" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

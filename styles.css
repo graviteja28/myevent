@@ -59,30 +59,6 @@ p {
     background: #c40000;
 }
 
-footer {
-    background: #222;
-    color: white;
-    padding: 15px;
-    margin-top: 30px;
-}
-
 .hidden {
     display: none;
-}
-
-.login-container {
-    max-width: 400px;
-    margin: 100px auto;
-    padding: 20px;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-input {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }

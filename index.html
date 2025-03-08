@@ -5,34 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Events Streaming</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
         <h1>🎥 Live Events Streaming</h1>
         <p>Enjoy high-quality live streaming for your special moments!</p>
+        <button onclick="logout()" class="logout-btn">Logout</button>
     </header>
 
     <div class="event-container">
         <h2>🔴 Ongoing Events</h2>
+
         <div class="event">
             <img src="https://source.unsplash.com/400x250/?wedding,event" alt="Event A">
-            <h3>Event A - Grand Wedding</h3>
+            <h3>Grand Wedding</h3>
+            <p><strong>Date:</strong> March 10, 2025</p>
+            <p><strong>Location:</strong> Hyderabad, Andhra Pradesh</p>
             <a href="event.html?id=A" class="watch-btn">Watch Live</a>
         </div>
 
         <div class="event">
             <img src="https://source.unsplash.com/400x250/?concert,party" alt="Event B">
-            <h3>Event B - Music Concert</h3>
+            <h3>Music Concert</h3>
+            <p><strong>Date:</strong> March 12, 2025</p>
+            <p><strong>Location:</strong> Vizag, Andhra Pradesh</p>
             <a href="event.html?id=B" class="watch-btn">Watch Live</a>
         </div>
     </div>
 
     <footer>
-        <p>📞 Contact: <a href="tel:+919876543210">+91 98765 43210</a> | 📩 <a href="mailto:info@liveevents.com">info@liveevents.com</a></p>
-        <button onclick="logout()" class="logout-btn">Logout</button>
+        <a href="login.html" class="login-btn">🔑 Login to Access Events</a>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
